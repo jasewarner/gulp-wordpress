@@ -7,9 +7,7 @@
  * @author   Author
  * @license  License
  * @link     Link
- */
-
-/*
+ *
  * Template Name: Name
  */
 
