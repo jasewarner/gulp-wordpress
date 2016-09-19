@@ -39,7 +39,4 @@ The Gulp package features the following helpful packages:
   <li><a href="https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards">WordPress Coding Standards for PHP_Codesniffer</a></li>
   <li><a href="http://gulpjs.com/">Gulp.js</a></li>
   <li><a href="http://sass-lang.com/">SASS / SCSS</a></li>
-  <li><a href=""></a></li>
-  <li><a href=""></a></li>
-  <li><a href=""></a></li>
 </ul>
