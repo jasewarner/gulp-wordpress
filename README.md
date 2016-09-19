@@ -33,6 +33,17 @@ The Gulp package features the following helpful packages:
   <li><a href="https://github.com/terinjokes/gulp-uglify">gulp-uglify</a></li>
 </ul>
 
+There are also a selection of useful WordPress functions located in the <code>functions</code> directory, including the following:
+
+<ul>
+    <li>Change admin credit in footer</li>
+    <li>Change default “Howdy” greeting</li>
+    <li>Reorder admin menu</li>
+    <li>Register custom navigation menu</li>
+    <li>Remove trailing slash from permalinks</li>
+    <li>Enqueue scripts and styles</li>
+</ul>
+
 ## Credits
 <ul>
   <li><a href="https://wordpress.com">WordPress</a> (duh!)</li>
