@@ -15,7 +15,6 @@
 function wp_exit_admin_footer() {
 	echo '<p>Developed by <a href="http://url.com">Name</a></p>';
 }
-
 add_filter( 'admin_footer_text', 'wp_exit_admin_footer' );
 
 /**
@@ -42,7 +41,6 @@ function wp_exit_greeting( $wp_admin_bar ) {
 		));
 	}
 }
-
 add_action( 'admin_bar_menu', 'wp_exit_greeting', 11 );
 
 /**
@@ -66,6 +64,5 @@ function wp_exit_admin_menu_order( $menu_ord ) {
 		'separator-last', // Last separator.
 	);
 }
-
 add_filter( 'custom_menu_order', 'wp_exit_admin_menu_order' );
 add_filter( 'menu_order', 'wp_exit_admin_menu_order' );

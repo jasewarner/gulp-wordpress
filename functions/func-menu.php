@@ -19,5 +19,4 @@ function wp_exit_register_menus() {
 		)
 	);
 }
-
 add_action( 'init', 'wp_exit_register_menus' );
