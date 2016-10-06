@@ -1,4 +1,4 @@
-//Event wrapper
+// Event wrapper.
 @mixin on-event($self: false) {
   @if $self {
     &,
@@ -16,21 +16,21 @@
   }
 }
 
-//Contexts
+// Contexts.
 @mixin when-inside($selector) {
   #{$selector} & {
     @content;
   }
 }
 
-//Opacity
+// Opacity.
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
   filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-//Font size
+// Font size.
 @function calculateRem($size) {
   $remSize: $size / 16px;
   @return $remSize * 1rem;
@@ -41,7 +41,7 @@
   font-size: calculateRem($size);
 }
 
-//Background image
+// Background image.
 $image-path: '../img' !default;
 $fallback-extension: 'png' !default;
 $retina-suffix: '@2x';
@@ -59,7 +59,7 @@ $retina-suffix: '@2x';
   }
 }
 
-//Clearfix
+// Clearfix.
 %clearfix {
   *zoom: 1;
   &:before, &:after {
@@ -69,4 +69,31 @@ $retina-suffix: '@2x';
   &:after {
     clear: both;
   }
+}
+
+// Animations and keyframes.
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
 }

@@ -1,14 +1,13 @@
-//Partials
-@import "partials/reset";
-@import "partials/base";
-@import "partials/responsive";
-@import "partials/typography";
-@import "partials/variables";
+// Partials.
+@import 'partials/reset';
+@import 'partials/base';
+@import 'partials/responsive';
+@import 'partials/typography';
 
-//Elements
-@import "elements/header";
-@import "elements/nav";
-@import "elements/footer";
+// Elements.
+@import 'elements/header';
+@import 'elements/nav';
+@import 'elements/footer';
 
-//Views
-@import "views/page";
+// Views.
+@import 'views/page';
