@@ -15,7 +15,7 @@
 function wp_exit_theme_styles() {
 	wp_register_style(
 		'styles',
-		get_template_directory_uri() . '/assets/css/main.min.css',
+		get_template_directory_uri() . '/assets/css/style.min.css',
 		array(),
 		'1.0.0',
 		'all'

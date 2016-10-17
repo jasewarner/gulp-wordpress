@@ -13,7 +13,7 @@
  * Credit in admin footer
  */
 function wp_exit_admin_footer() {
-	echo '<p>Developed by <a href="http://url.com">Name</a></p>';
+	echo 'Developed by <a href="http://url.com">Name</a>';
 }
 add_filter( 'admin_footer_text', 'wp_exit_admin_footer' );
 
