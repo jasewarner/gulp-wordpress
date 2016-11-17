@@ -1,5 +1,5 @@
 # wp-exit
-Version: 1.0.0
+Version: 1.0.2
 
 ## Author
 Jase Warner ( <a href="https://twitter.com/jase_io">@jase_io</a> / <a href="http://jase.io">jase_io</a>)
