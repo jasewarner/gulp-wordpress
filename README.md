@@ -1,15 +1,15 @@
-# wp-exit
-Version: 1.0.3
+# Gulp + WordPress
+Version: 1.0.4
 
 ## Author
 Jase Warner ( <a href="https://twitter.com/jase_io">@jase_io</a> / <a href="http://jase.io">jase_io</a>)
 
 ## Synopsis
-wp-exit is a blank slate WordPress theme, for those Developers wishing to start a project with the bare minimum.
+Gulp + WordPress is a blank slate WordPress theme, for those Developers wishing to start a project with the bare minimum.
 
 The theme has been built according to <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/">WordPress Coding Standards</a>. All functions, includes and templates are placed in their respective directory and divided into separate files accordingly.
 
-wp-exit is packaged with Gulp for watching and compiling SCSS and JS files.
+Gulp + WordPress is packaged with Gulp for watching and compiling SCSS and JS files.
 A selection of helpful mixins is also included, all of which are featured in <a href="http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/">this useful article</a> by <a href="https://twitter.com/seb_ekstrom">@seb_ekstrom</a>.
 
 ## Installation

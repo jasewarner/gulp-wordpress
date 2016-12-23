@@ -12,7 +12,7 @@
 /**
  * Enqueue scripts
  */
-function wp_exit_theme_scripts() {
+function gulp_wp_theme_scripts() {
 	wp_register_script(
 		'scripts',
 		get_template_directory_uri() . '/assets/js/scripts.min.js',
@@ -23,4 +23,4 @@ function wp_exit_theme_scripts() {
 	wp_enqueue_script( 'scripts' );
 
 }
-add_action( 'wp_enqueue_scripts', 'wp_exit_theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'gulp_wp_theme_scripts' );

@@ -12,7 +12,7 @@
 /**
  * Enqueue styles
  */
-function wp_exit_theme_styles() {
+function gulp_wp_theme_styles() {
 	wp_register_style(
 		'styles',
 		get_template_directory_uri() . '/assets/css/style.min.css',
@@ -23,4 +23,4 @@ function wp_exit_theme_styles() {
 	wp_enqueue_style( 'styles' );
 
 }
-add_action( 'wp_enqueue_scripts', 'wp_exit_theme_styles' );
+add_action( 'wp_enqueue_scripts', 'gulp_wp_theme_styles' );

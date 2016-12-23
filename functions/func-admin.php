@@ -12,15 +12,15 @@
 /**
  * Credit in admin footer
  */
-function wp_exit_admin_footer() {
+function gulp_wp_admin_footer() {
 	echo 'Developed by <a href="http://url.com">Name</a>';
 }
-add_filter( 'admin_footer_text', 'wp_exit_admin_footer' );
+add_filter( 'admin_footer_text', 'gulp_wp_admin_footer' );
 
 /**
  * Change default greeting
  */
-function wp_exit_greeting( $wp_admin_bar ) {
+function gulp_wp_greeting( $wp_admin_bar ) {
 	$user_id = get_current_user_id();
 	$current_user = wp_get_current_user();
 	$profile_url = get_edit_profile_url( $user_id );
@@ -41,12 +41,12 @@ function wp_exit_greeting( $wp_admin_bar ) {
 		));
 	}
 }
-add_action( 'admin_bar_menu', 'wp_exit_greeting', 11 );
+add_action( 'admin_bar_menu', 'gulp_wp_greeting', 11 );
 
 /**
  * Change admin menu order
  */
-function wp_exit_admin_menu_order( $menu_ord ) {
+function gulp_wp_admin_menu_order( $menu_ord ) {
 	if ( ! $menu_ord ) return true;
 
 	return array(
@@ -64,5 +64,5 @@ function wp_exit_admin_menu_order( $menu_ord ) {
 		'separator-last', // Last separator.
 	);
 }
-add_filter( 'custom_menu_order', 'wp_exit_admin_menu_order' );
-add_filter( 'menu_order', 'wp_exit_admin_menu_order' );
+add_filter( 'custom_menu_order', 'gulp_wp_admin_menu_order' );
+add_filter( 'menu_order', 'gulp_wp_admin_menu_order' );
