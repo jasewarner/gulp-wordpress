@@ -1,5 +1,5 @@
 # Gulp + WordPress
-Version: 1.0.4
+Version: 1.0.5
 
 ## Author
 Jase Warner ( <a href="https://twitter.com/jase_io">@jase_io</a> / <a href="http://jase.io">jase_io</a>)
