@@ -1,3 +1,15 @@
+<?php
+/**
+ * Header template.
+ *
+ * @category Category
+ * @package  Package
+ * @author   Author
+ * @license  License
+ * @link     Link
+ */
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
