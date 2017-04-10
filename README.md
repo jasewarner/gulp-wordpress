@@ -2,7 +2,7 @@
 Version: 1.0.5
 
 ## Author
-Jase Warner ( <a href="http://jase.io">http://jase_io</a>)
+Jase Warner ( <a href="http://jase.io">http://jase.io</a>)
 
 ## Synopsis
 Gulp + WordPress is a blank slate WordPress theme, for those Developers wishing to start a project with the bare minimum.
