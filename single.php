@@ -1,6 +1,6 @@
 <?php
 /**
- * Post
+ * Default post template.
  *
  * @category Category
  * @package  Package
@@ -8,7 +8,6 @@
  * @license  License
  * @link     Link
  */
-
 ?>
 
 <?php get_header(); ?>

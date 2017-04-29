@@ -1,6 +1,6 @@
 <?php
 /**
- * Front Page
+ * Front page template.
  *
  * @category Category
  * @package  Package

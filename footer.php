@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer
+ * Footer template.
  *
  * @category Category
  * @package  Package
@@ -8,7 +8,6 @@
  * @license  License
  * @link     Link
  */
-
 ?>
 
 </article>

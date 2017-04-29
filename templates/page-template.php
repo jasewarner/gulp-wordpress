@@ -1,6 +1,6 @@
 <?php
 /**
- * Template
+ * Template example.
  *
  * @category Category
  * @package  Package
@@ -8,7 +8,7 @@
  * @license  License
  * @link     Link
  *
- * Template Name: Name
+ * Template Name: Example Template
  */
 
 get_header();

@@ -1,6 +1,6 @@
 <?php
 /**
- * Menus
+ * Menu functions.
  *
  * @category Category
  * @package  Package
@@ -10,7 +10,7 @@
  */
 
 /**
- * Register nav menus
+ * Register nav menus.
  */
 function gulp_wp_register_menus() {
 	register_nav_menus(

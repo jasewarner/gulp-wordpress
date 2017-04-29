@@ -1,6 +1,6 @@
 <?php
 /**
- * 404
+ * 404 template.
  *
  * @category Category
  * @package  Package

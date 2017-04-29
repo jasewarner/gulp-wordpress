@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions
+ * Theme functions.
  *
  * @category Category
  * @package  Package
