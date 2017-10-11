@@ -8,22 +8,26 @@
  * @license  License
  * @link     Link
  */
-?>
 
-<?php get_header(); ?>
+get_header();
 
-<?php if ( have_posts() ) : ?>
+if ( have_posts() ) {
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	while ( have_posts() ) {
 
-		<header>
-			<h1><?php the_title(); ?></h1>
-		</header>
+		the_post();
+		?>
 
-		<?php the_content(); ?>
+		<article>
+			<header>
+				<h1><?php the_title(); ?></h1>
+			</header>
+			<?php the_content(); ?>
+		</article>
 
-	<?php endwhile; ?>
+		<?php
+	}
 
-<?php endif; ?>
+}
 
-<?php get_footer();
+get_footer();

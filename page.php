@@ -8,14 +8,16 @@
  * @license  License
  * @link     Link
  */
+
+get_header();
 ?>
 
-<?php get_header(); ?>
+	<article>
+		<header>
+			<h1><?php the_title(); ?></h1>
+			<?php the_content(); ?>
+		</header>
+	</article>
 
-<header>
-	<h1><?php the_title(); ?></h1>
-</header>
-
-<?php the_content(); ?>
-
-<?php get_footer();
+<?php
+get_footer();

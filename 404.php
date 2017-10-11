@@ -9,10 +9,14 @@
  * @link     Link
  */
 
-get_header(); ?>
+get_header();
+?>
 
-<header>
-	<h1><?php echo '404. Page Not Found.'; ?></h1>
-</header>
+	<article>
+		<header>
+			<h1><?php echo '404. Page Not Found.'; ?></h1>
+		</header>
+	</article>
 
-<?php get_footer();
+<?php
+get_footer();
