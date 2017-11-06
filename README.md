@@ -21,7 +21,7 @@ Clone the project into <code>wp-content/themes</code> and rename it accordingly.
 
 In Terminal, <code>cd</code> into the <code>assets</code> directory and install the Gulp packages (if you haven't already installed Gulp, you’ll need to <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">do so</a> first), e.g:
 
-<code>sudo npm install gulp-[package]</code>
+<code>npm install</code>
 
 Once you have installed the packages, in Terminal, run <code>gulp watch</code>. SCSS files in <code>assets/scss/</code> are compiled and minified in to <code>assets/css</code>.
 
