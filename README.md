@@ -1,6 +1,6 @@
 # Gulp + WordPress
 
-Version: 2.0.0
+Version: 2.0.1
 
 ## Author
 
@@ -13,7 +13,10 @@ Gulp + WordPress is a blank slate WordPress theme, for those Developers wishing 
 The theme has been built according to <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/">WordPress Coding Standards</a>. All functions, includes and templates are placed in their respective directory and divided into separate files accordingly.
 
 Gulp + WordPress is packaged with Gulp for watching and compiling and minifying SCSS and JS files.
-A selection of helpful mixins is also included, all of which are featured in <a href="http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/">this useful article</a> by <a href="https://twitter.com/seb_ekstrom">@seb_ekstrom</a>.
+
+A selection of helpful mixins is also included, most of which are featured in <a href="http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/">this useful article</a> by <a href="https://twitter.com/seb_ekstrom">@seb_ekstrom</a>.
+
+You may also write your JavaScript in ES6 – The Gulp scripts task utilises <a href="https://babeljs.io/">Babel</a>, so you can use new syntax without worrying about browser support!
 
 ## Installation
 
@@ -23,14 +26,21 @@ In Terminal, <code>cd</code> into the <code>assets</code> directory and install 
 
 <code>npm install</code>
 
-Once you have installed the packages, in Terminal, run <code>gulp watch</code>. SCSS files in <code>assets/scss/</code> are compiled and minified in to <code>assets/css</code>.
+> Note: you may need to run the command as <code>sudo npm install</code>, depending on your permissions.
 
-JS files in <code>assets/js/functions/</code> are uglified and sent over to <code>assets/js/scripts</code>. This approach allows for specific scripts to be enqueued (in <code>/functions/func-script.php</code>) for specific pages/templates.
+Once you have installed the packages, in Terminal while still in the <code>/assets</code> directory, run <code>gulp watch</code>. 
+
+SCSS files in <code>assets/scss/</code> are compiled and minified over to <code>assets/css</code>.
+
+JavaScript files in <code>assets/js/scripts/</code> are uglified, concatenated and sent over to <code>assets/js/</code>.
+
+> Note: If you would like to specify scripts per WordPress template (e.g. posts, pages etc.), you can tweak the <code>js</code> Gulp task to create separate JavaScript files.
 
 ## Features
 The Gulp build features the following helpful packages:
 <ul>
   <li><a href="https://github.com/sindresorhus/gulp-autoprefixer">gulp-autoprefixer</a></li>
+  <li><a href="https://github.com/babel/gulp-babel">gulp-babel</a></li>
   <li><a href="https://github.com/scniro/gulp-clean-css">gulp-clean-css</a></li>
   <li><a href="https://github.com/hparra/gulp-rename">gulp-rename</a></li>
   <li><a href="https://github.com/dlmanning/gulp-sass">gulp-sass</a></li>

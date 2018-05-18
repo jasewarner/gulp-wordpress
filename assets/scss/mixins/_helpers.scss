@@ -1,11 +1,11 @@
-// Contexts.
+// Contexts
 @mixin when-inside($selector) {
   #{$selector} & {
     @content;
   }
 }
 
-// Clearfix.
+// Clearfix
 %clearfix {
   *zoom: 1;
   &:before, &:after {
@@ -17,7 +17,7 @@
   }
 }
 
-// Animations and keyframes.
+// Animations and keyframes
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
     @content;
@@ -42,4 +42,24 @@
   -ms-animation: #{$str};
   -o-animation: #{$str};
   animation: #{$str};
+}
+
+// Aspect ratio
+// e.g. @include aspect-ratio(16,9);
+// expects child to have class of `.content`
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
