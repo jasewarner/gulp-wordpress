@@ -1,12 +1,12 @@
 {
  "name": "package-name",
  "version": "1.0.0",
- "description": "",
+ "description": "package-description",
  "main": "index.js",
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1"
  },
- "author": "Author Name",
+ "author": "author-name",
  "license": "ISC",
  "devDependencies": {
   "babel-core": "^6.26.3",
