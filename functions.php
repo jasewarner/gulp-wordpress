@@ -1,12 +1,10 @@
 <?php
 /**
- * Theme functions.
+ * Theme functions
  *
- * @category Category
- * @package  Package
- * @author   Author
- * @license  License
- * @link     Link
+ * @author   <Author>
+ * @version  1.0.0
+ * @package  <Package>
  */
 
 require_once 'functions/func-admin.php';

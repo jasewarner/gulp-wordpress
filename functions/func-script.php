@@ -1,16 +1,14 @@
 <?php
 /**
- * Script functions.
+ * Script functions
  *
- * @category Category
- * @package  Package
- * @author   Author
- * @license  License
- * @link     Link
+ * @author   <Author>
+ * @version  1.0.0
+ * @package  <Package>
  */
 
 /**
- * Enqueue theme scripts.
+ * Enqueue theme scripts
  */
 function gulp_wp_theme_scripts() {
 
@@ -18,11 +16,11 @@ function gulp_wp_theme_scripts() {
 	 * Set a script handle prefix based on theme name.
 	 * Note that this should be the same as the `themePrefix` var set in your Gulpfile.js.
 	 */
-	$themeHandlePrefix = 'theme-name';
+	$theme_handle_prefix = 'theme-name';
 
 	/**
 	 * Enqueue common scripts.
 	 */
-	wp_enqueue_script( $themeHandlePrefix . '-common', get_template_directory_uri() . '/assets/js/scripts/' . $themeHandlePrefix . '-common.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( $theme_handle_prefix . '-common', get_template_directory_uri() . '/assets/js/scripts/' . $theme_handle_prefix . '-common.min.js', array( 'jquery' ), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'gulp_wp_theme_scripts' );

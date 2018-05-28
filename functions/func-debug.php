@@ -1,16 +1,14 @@
 <?php
 /**
- * Debugging tools.
+ * Debugging tools
  *
- * @category Category
- * @package  Package
- * @author   Author
- * @license  License
- * @link     Link
+ * @author   <Author>
+ * @version  1.0.0
+ * @package  <Package>
  */
 
 /**
- * Pretty printing debugging tool.
+ * Pretty printing debugging tool
  */
 function pr( $var ) {
 	print '<pre>';

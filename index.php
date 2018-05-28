@@ -1,12 +1,10 @@
 <?php
 /**
- * Index template.
+ * Index template
  *
- * @category Category
- * @package  Package
- * @author   Author
- * @license  License
- * @link     Link
+ * @author   <Author>
+ * @version  1.0.0
+ * @package  <Package>
  */
 
 get_header();
