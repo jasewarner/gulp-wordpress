@@ -1,67 +1,62 @@
 # Gulp + WordPress
 
-Version: 2.0.1
+Version: 2.0.2
 
 ## Author
 
-Jase Warner ( <a href="https://jase.io">https://jase.io</a> )
+Jase Warner ( [https://jase.io](https://jase.io) )
 
 ## Synopsis
 
 Gulp + WordPress is a blank slate WordPress theme, for those Developers wishing to start a project with the bare minimum.
 
-The theme has been built according to <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/">WordPress Coding Standards</a>. All functions, includes and templates are placed in their respective directory and divided into separate files accordingly.
+The theme has been built according to [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/). All functions, includes and templates are placed in their respective directory and divided into separate files accordingly.
 
 Gulp + WordPress is packaged with Gulp for watching and compiling and minifying SCSS and JS files.
 
-A selection of helpful mixins is also included, most of which are featured in <a href="http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/">this useful article</a> by <a href="https://twitter.com/seb_ekstrom">@seb_ekstrom</a>.
+A selection of helpful mixins is also included, most of which are featured in [this useful article](http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/) by [@seb_ekstrom](https://twitter.com/seb_ekstrom).
 
-You may also write your JavaScript in ES6 – The Gulp scripts task utilises <a href="https://babeljs.io/">Babel</a>, so you can use new syntax without worrying about browser support!
+You may also write your JavaScript in ES6 &ndash; The Gulp scripts task utilises [Babel](https://babeljs.io/), so you can use new syntax without worrying about browser support!
 
 ## Installation
 
-Clone the project into <code>wp-content/themes</code> and rename it accordingly.
+Clone the project into `wp-content/themes` and rename it accordingly.
 
-In Terminal, <code>cd</code> into the <code>assets</code> directory and install the Gulp packages (if you haven't already installed Gulp, you’ll need to <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">do so</a> first), e.g:
+In Terminal, `cd` into the `assets` directory and install the Gulp packages (if you haven't already installed Gulp, you’ll need to [do so](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) first):
 
-<code>npm install</code>
+`npm install`
 
-> Note: you may need to run the command as <code>sudo npm install</code>, depending on your permissions.
+Once you have installed the packages, in Terminal while still in the `/assets` directory, run `gulp watch`. 
 
-Once you have installed the packages, in Terminal while still in the <code>/assets</code> directory, run <code>gulp watch</code>. 
+SCSS files in `assets/scss/` are compiled and minified over to `assets/css`.
 
-SCSS files in <code>assets/scss/</code> are compiled and minified over to <code>assets/css</code>.
+JavaScript files in `assets/js/scripts/` are uglified, concatenated and sent over to `assets/js/`.
 
-JavaScript files in <code>assets/js/scripts/</code> are uglified, concatenated and sent over to <code>assets/js/</code>.
-
-> Note: If you would like to specify scripts per WordPress template (e.g. posts, pages etc.), you can tweak the <code>js</code> Gulp task to create separate JavaScript files.
+> Note: If you would like to specify scripts per WordPress template (e.g. posts, pages etc.), you can tweak the `js` Gulp task to create separate JavaScript files.
 
 ## Features
+
 The Gulp build features the following helpful packages:
-<ul>
-  <li><a href="https://github.com/sindresorhus/gulp-autoprefixer">gulp-autoprefixer</a></li>
-  <li><a href="https://github.com/babel/gulp-babel">gulp-babel</a></li>
-  <li><a href="https://github.com/scniro/gulp-clean-css">gulp-clean-css</a></li>
-  <li><a href="https://github.com/hparra/gulp-rename">gulp-rename</a></li>
-  <li><a href="https://github.com/dlmanning/gulp-sass">gulp-sass</a></li>
-  <li><a href="https://github.com/terinjokes/gulp-uglify">gulp-uglify</a></li>
-</ul>
 
-There are also a selection of useful WordPress functions located in the <code>functions</code> directory, including the following:
+* [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer)
+* [gulp-babel](https://github.com/babel/gulp-babel)
+* [gulp-clean-css](https://github.com/scniro/gulp-clean-css)
+* [gulp-rename](https://github.com/hparra/gulp-rename)
+* [gulp-sass](https://github.com/dlmanning/gulp-sass)
+* [gulp-uglify](https://github.com/terinjokes/gulp-uglify)
 
-<ul>
-    <li>Change admin credit in footer</li>
-    <li>Change default “Howdy” greeting</li>
-    <li>Enqueue scripts and styles</li>
-    <li>Pretty printing debugging tool for PHP</li>
-    <li>Register custom navigation menu</li>
-    <li>Reorder admin menu</li>
-</ul>
+There are also a selection of useful WordPress functions located in the `functions` directory, including the following:
+
+* Change admin credit in footer
+* Change default “Howdy” greeting
+* Enqueue scripts and styles
+* Pretty printing debugging tool for PHP
+* Register custom navigation menu
+* Reorder admin menu
 
 ## Credits
-<ul>
-  <li><a href="https://wordpress.com">WordPress</a> (duh!)</li>
-  <li><a href="https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards">WordPress Coding Standards for PHP_Codesniffer</a></li>
-  <li><a href="http://gulpjs.com/">Gulp.js</a></li>
-  <li><a href="http://sass-lang.com/">SASS / SCSS</a></li>
-</ul>
+
+* [WordPress](https://wordpress.com)
+* [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
+* [Gulp.js](http://gulpjs.com/)
+* [SASS / SCSS](http://sass-lang.com/)
