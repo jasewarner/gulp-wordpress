@@ -2,12 +2,11 @@ const common = (($) => {
     'use strict';
 
     /**
-     * This is a common function.
+     * Some function
      *
      * @since   1.0.0
      */
-    const commonFunc = () => {
-
+    const someFunction = () => {
         // do something
     };
 
@@ -17,7 +16,7 @@ const common = (($) => {
      * @since   1.0.0
      */
     const ready = () => {
-        commonFunc();
+        someFunction();
     };
 
     /**

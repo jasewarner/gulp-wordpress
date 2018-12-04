@@ -1,40 +1,49 @@
-// Variables
-// ---------------------------
+// --------------------------------------------------
+// vars
+
 @import "partials/variables";
 
-// Bootstrap
-// ---------------------------
+// --------------------------------------------------
+// bootstrap
 
 /**
- * Place Bootstrap scss files in the `scss/bootstrap/` directory and import them in `style.scss` via `_bootstrap.scss`.
+ * Place Bootstrap v4 scss files in the `scss/bootstrap/` directory and import them in `style.scss` via `_bootstrap.scss`.
  * I find this a handy way to work, as I can quickly comment out any Bootstrap components that are not needed for the theme.
+ *
+ * Source files available at https://getbootstrap.com/docs/4.1/getting-started/download/
  */
+
 //@import "bootstrap/bootstrap";
 
-// Mixins
-// ---------------------------
+// --------------------------------------------------
+// mixins
+
 @import "mixins/fonts";
 @import "mixins/images";
 @import "mixins/helpers";
 
-// Partials
-// ---------------------------
+// --------------------------------------------------
+// partials
+
 @import "partials/base";
 @import "partials/icons";
 @import "partials/buttons";
 @import "partials/type";
 
-// Layout
-// ---------------------------
+// --------------------------------------------------
+// layout
+
 @import "layout/footer";
 @import "layout/header";
 @import "layout/main";
 @import "layout/nav";
 
-// Components
-// ---------------------------
+// --------------------------------------------------
+// components
+
 // @import your components here
 
-// Views
-// ---------------------------
+// --------------------------------------------------
+// views
+
 // @import your views/pages here

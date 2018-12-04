@@ -1,6 +1,6 @@
-/**
- * Font size.
- */
+// --------------------------------------------------
+// font size
+
 @function calculateRem($size) {
   $remSize: $size / 18px;
   @return $remSize * 1rem;
@@ -9,4 +9,31 @@
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
+}
+
+// --------------------------------------------------
+// heading styles
+
+@mixin h1 {
+
+}
+
+@mixin h2 {
+
+}
+
+@mixin h3 {
+
+}
+
+@mixin h4 {
+
+}
+
+@mixin h5 {
+
+}
+
+@mixin h6 {
+
 }
