@@ -2,8 +2,9 @@
 .*
 ~*
 
-# ignore node dependency directories (used by grunt)
+# ignore gulp files and directories
 node_modules/
+*/**/package-lock.json
 
 # ignore OS generated files
 ehthumbs.db
