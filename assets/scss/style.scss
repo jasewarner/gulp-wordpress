@@ -6,14 +6,8 @@
 // --------------------------------------------------
 // bootstrap
 
-/**
- * Place Bootstrap v4 scss files in the `scss/bootstrap/` directory and import them in `style.scss` via `_bootstrap.scss`.
- * I find this a handy way to work, as I can quickly comment out any Bootstrap components that are not needed for the theme.
- *
- * Source files available at https://getbootstrap.com/docs/4.1/getting-started/download/
- */
-
-//@import "bootstrap/bootstrap";
+@import "../node_modules/bootstrap-scss/bootstrap-reboot";
+@import "../node_modules/bootstrap-scss/bootstrap-grid";
 
 // --------------------------------------------------
 // mixins

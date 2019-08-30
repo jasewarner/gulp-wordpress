@@ -22,7 +22,6 @@ const scssSrc = 'scss/**/*.scss';
 
 const jsSrcDir = 'js';
 const jsSrcFiles = [
-    // `${jsSrcDir}/vendors/some-library.js`,
     `${jsSrcDir}/scripts/common.js`,
 ];
 
@@ -34,10 +33,7 @@ const jsSrcFiles = [
 gulp.task('css', function () {
     gulp.src(scssSrc)
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
-            browsers : ['last 3 versions', '> 5%', 'Explorer >= 10', 'Safari >= 8'],
-            cascade : false
-        }))
+        .pipe(autoprefixer({ cascade : false }))
         .pipe(rename(`${themePrefix}.min.css`))
         .pipe(cleancss())
         .pipe(gulp.dest('./css/'));
