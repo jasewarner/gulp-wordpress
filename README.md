@@ -1,6 +1,6 @@
 # Gulp + WordPress
 
-Version: 2.0.3
+Version: 2.0.5
 
 ## Author
 
@@ -52,7 +52,6 @@ There are also a selection of useful WordPress functions located in the `functio
 * Enqueue scripts and styles
 * Pretty printing debugging tool for PHP
 * Register custom navigation menu
-* Reorder admin menu
 
 ## Credits
 
