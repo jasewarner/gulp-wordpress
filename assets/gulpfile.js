@@ -40,7 +40,7 @@ gulp.task('scss-lint', function() {
  * Scss files are compiled and sent over to `assets/css/`.
  */
 gulp.task('css', ['scss-lint'], function () {
-    gulp.src(scssSrc)
+    return gulp.src(scssSrc)
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({ cascade : false }))
         .pipe(rename(`${themePrefix}.min.css`))
