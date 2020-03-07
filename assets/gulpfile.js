@@ -8,12 +8,13 @@ const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
+const scsslint = require('gulp-scss-lint');
 
 /**
  * Here we set a prefix for our compiled and stylesheet and scripts.
  * Note that this should be the same as the `$themeHandlePrefix` in `func-script.php` and `func-style.php`.
  */
-const themePrefix = 'theme-name';
+const themePrefix = 'ucl';
 
 /**
  * Asset paths.
@@ -26,11 +27,19 @@ const jsSrcFiles = [
 ];
 
 /**
+ * Scss lint
+ */
+gulp.task('scss-lint', function() {
+    return gulp.src(scssSrc)
+        .pipe(scsslint());
+});
+
+/**
  * Task for styles.
  *
  * Scss files are compiled and sent over to `assets/css/`.
  */
-gulp.task('css', function () {
+gulp.task('css', ['scss-lint'], function () {
     gulp.src(scssSrc)
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({ cascade : false }))
@@ -61,3 +70,8 @@ gulp.task('watch', function () {
     gulp.watch(scssSrc, ['css']);
     gulp.watch(jsSrcFiles, ['js']);
 });
+
+/**
+ * Default task
+ */
+gulp.task('default', ['css', 'js'] );

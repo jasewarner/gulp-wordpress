@@ -1,36 +1,35 @@
 // --------------------------------------------------
 // vars
 
-@import "partials/variables";
+@import 'partials/variables';
 
 // --------------------------------------------------
 // bootstrap
 
-@import "../node_modules/bootstrap-scss/bootstrap-reboot";
-@import "../node_modules/bootstrap-scss/bootstrap-grid";
+@import '../node_modules/bootstrap-scss/bootstrap-reboot';
+@import '../node_modules/bootstrap-scss/bootstrap-grid';
 
 // --------------------------------------------------
 // mixins
 
-@import "mixins/fonts";
-@import "mixins/images";
-@import "mixins/helpers";
+@import 'mixins/fonts';
+@import 'mixins/helpers';
 
 // --------------------------------------------------
 // partials
 
-@import "partials/base";
-@import "partials/icons";
-@import "partials/buttons";
-@import "partials/type";
+@import 'partials/base';
+@import 'partials/icons';
+@import 'partials/buttons';
+@import 'partials/type';
 
 // --------------------------------------------------
 // layout
 
-@import "layout/footer";
-@import "layout/header";
-@import "layout/main";
-@import "layout/nav";
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/nav';
 
 // --------------------------------------------------
 // components

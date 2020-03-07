@@ -8,78 +8,25 @@
 }
 
 // --------------------------------------------------
-// clearfix
-
-%clearfix {
-  *zoom: 1;
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-// --------------------------------------------------
-// animations
-
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-  @-ms-keyframes #{$animation-name} {
-    @content;
-  }
-  @-o-keyframes #{$animation-name} {
-    @content;
-  }
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
-}
-
-// --------------------------------------------------
 // aspect ratio
 // e.g. @include aspect-ratio(16,9);
 // expects child to have class of `.content` (could be changed to a wildcard `*`)
 
 @mixin aspect-ratio($width, $height) {
   position: relative;
-  &:before {
+
+  &::before {
+    content: '';
     display: block;
-    content: "";
-    width: 100%;
     padding-top: ($height / $width) * 100%;
+    width: 100%;
   }
+
   > .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-  }
-}
-
-// --------------------------------------------------
-// focus transition
-// change the transition and colour as desired
-@mixin focus() {
-  transition: all .3s ease;
-
-  &:focus {
-    border-color: rgba(#000, 0.25);
-    box-shadow: 0 0 0 0.2rem rgba(#000, 0.35);
-    outline: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
