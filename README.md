@@ -1,6 +1,6 @@
 # Gulp + WordPress
 
-Version: 2.0.5
+Version: 2.0.6
 
 ## Author
 
@@ -44,8 +44,9 @@ The Gulp build features the following helpful packages:
 * [gulp-rename](https://github.com/hparra/gulp-rename)
 * [gulp-sass](https://github.com/dlmanning/gulp-sass)
 * [gulp-uglify](https://github.com/terinjokes/gulp-uglify)
+* [gulp-scss-lint](https://github.com/juanfran/gulp-scss-lint)
 
-There are also a selection of useful WordPress functions located in the `functions` directory, including the following:
+There are also a selection of useful WordPress functions located in the `functions` directory to get you started, including the following:
 
 * Change admin credit in footer
 * Change default “Howdy” greeting
