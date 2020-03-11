@@ -14,7 +14,7 @@ const scsslint = require('gulp-scss-lint');
  * Here we set a prefix for our compiled and stylesheet and scripts.
  * Note that this should be the same as the `$themeHandlePrefix` in `func-script.php` and `func-style.php`.
  */
-const themePrefix = 'ucl';
+const themePrefix = 'theme-name';
 
 /**
  * Asset paths.
