@@ -29,6 +29,8 @@
   "babel-polyfill": "^6.26.0"
  },
  "browserslist": [
-  "defaults"
+  "> 1%",
+  "last 2 versions",
+  "dead"
  ]
 }
