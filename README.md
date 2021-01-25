@@ -6,6 +6,8 @@ Version: 2.0.6
 
 Jase Warner ( [https://jase.io](https://jase.io) )
 
+> If this project has been a help to you, feel free to [buy this grateful developer a beer](https://www.buymeacoffee.com/jasewarner/) 🍻
+
 ## Synopsis
 
 Gulp + WordPress is a blank slate WordPress theme, for those Developers wishing to start a project with the bare minimum.
