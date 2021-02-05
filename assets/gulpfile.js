@@ -17,20 +17,22 @@ const scsslint = require('gulp-scss-lint');
 const themePrefix = 'theme-name';
 
 /**
- * Asset paths.
+ * Paths and files
  */
-const scssSrc = 'scss/**/*.scss';
-
-const jsSrcDir = 'js';
-const jsSrcFiles = [
-    `${jsSrcDir}/scripts/common.js`,
+const srcScss = 'scss/**/*.scss';
+const srcJsDir = 'js';
+const srcJsFiles = [
+    //`./node_modules/babel-polyfill/dist/polyfill.js`,
+    `${srcJsDir}/scripts/common.js`,
 ];
+const destCss = 'css';
+const destJs = 'js';
 
 /**
  * Scss lint
  */
-gulp.task('scss-lint', function() {
-    return gulp.src(scssSrc)
+gulp.task('scss-lint', () => {
+    return gulp.src(srcScss)
         .pipe(scsslint());
 });
 
@@ -39,39 +41,39 @@ gulp.task('scss-lint', function() {
  *
  * Scss files are compiled and sent over to `assets/css/`.
  */
-gulp.task('css', ['scss-lint'], function () {
-    return gulp.src(scssSrc)
+gulp.task('css', gulp.series('scss-lint', () => {
+    return gulp.src(srcScss)
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({ cascade : false }))
         .pipe(rename(`${themePrefix}.min.css`))
         .pipe(cleancss())
-        .pipe(gulp.dest('./css/'));
-});
+        .pipe(gulp.dest(destCss));
+}));
 
 /**
  * Task for scripts.
  *
  * Js files are uglified and sent over to `assets/js/scripts/`.
  */
-gulp.task('js', function () {
-    return gulp.src(jsSrcFiles)
+gulp.task('js', () => {
+    return gulp.src(srcJsFiles)
         .pipe(babel({
             presets : ['es2015']
         }))
         .pipe(concat(`${themePrefix}.min.js`))
         .pipe(uglify())
-        .pipe(gulp.dest('./js/'));
+        .pipe(gulp.dest(destJs));
 });
 
 /**
  * Task for watching styles and scripts.
  */
-gulp.task('watch', function () {
-    gulp.watch(scssSrc, ['css']);
-    gulp.watch(jsSrcFiles, ['js']);
+gulp.task('watch', () => {
+    gulp.watch(srcScss, gulp.series('css'));
+    gulp.watch(srcJsFiles, gulp.series('js'));
 });
 
 /**
  * Default task
  */
-gulp.task('default', ['css', 'js'] );
+gulp.task('default', gulp.series('css', 'js') );
