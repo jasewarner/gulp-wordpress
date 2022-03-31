@@ -2,7 +2,7 @@
 
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('node-sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
@@ -22,7 +22,6 @@ const themePrefix = 'theme-name';
 const srcScss = 'scss/**/*.scss';
 const srcJsDir = 'js';
 const srcJsFiles = [
-    //`./node_modules/babel-polyfill/dist/polyfill.js`,
     `${srcJsDir}/scripts/common.js`,
 ];
 const destCss = 'css';
@@ -58,7 +57,7 @@ gulp.task('css', gulp.series('scss-lint', () => {
 gulp.task('js', () => {
     return gulp.src(srcJsFiles)
         .pipe(babel({
-            presets : ['es2015']
+            presets : ['@babel/env']
         }))
         .pipe(concat(`${themePrefix}.min.js`))
         .pipe(uglify())
