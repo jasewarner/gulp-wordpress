@@ -11,7 +11,7 @@
  * Credit in admin footer
  */
 function gulp_wp_admin_footer() {
-	echo 'Developed by <a href="http://author.com" target="_blank" rel="noreferrer noopener">Author Name</a>';
+	echo 'Developed by <a href="http://author.com" target="_blank" rel="noreferrer noopener">Author Name</a>. ';
 }
 add_filter( 'admin_footer_text', 'gulp_wp_admin_footer' );
 

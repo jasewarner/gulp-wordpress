@@ -6,19 +6,13 @@
 // --------------------------------------------------
 // bootstrap
 
-@import '../node_modules/bootstrap/scss/bootstrap-reboot';
-@import '../node_modules/bootstrap/scss/bootstrap-grid';
-@import '../node_modules/bootstrap/scss/bootstrap-utilities';
-
-// --------------------------------------------------
-// mixins
-
-@import 'mixins/fonts';
-@import 'mixins/helpers';
+//@import '../node_modules/bootstrap/scss/bootstrap-reboot';
+//@import '../node_modules/bootstrap/scss/bootstrap-grid';
 
 // --------------------------------------------------
 // partials
 
+@import 'partials/mixins';
 @import 'partials/base';
 @import 'partials/icons';
 @import 'partials/buttons';
@@ -29,15 +23,8 @@
 
 @import 'layout/footer';
 @import 'layout/header';
-@import 'layout/main';
-@import 'layout/nav';
 
 // --------------------------------------------------
-// components
+// snippets
 
-// @import your components here
-
-// --------------------------------------------------
-// views
-
-// @import your views/pages here
+// @import your snippets here

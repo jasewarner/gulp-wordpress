@@ -1,4 +1,4 @@
-const common = (($) => {
+const core = (($) => {
     'use strict';
 
     /**
@@ -28,4 +28,4 @@ const common = (($) => {
 
 })(jQuery);
 
-jQuery(common.ready);
+jQuery(core.ready);

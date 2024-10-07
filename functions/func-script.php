@@ -16,11 +16,19 @@ function gulp_wp_theme_scripts() {
 	 * Set a script handle prefix based on theme name.
 	 * Note that this should be the same as the `themePrefix` var set in your Gulpfile.js.
 	 */
-	$theme_handle_prefix = 'theme-name';
+	$handle = 'theme-name';
+
+	/**
+	 * Set paths for JS
+	 */
+	$js_dir_path = get_template_directory() . "/assets/js/dist";
+	$js_dir_uri = get_template_directory_uri() . "/assets/js/dist";
 
 	/**
 	 * Enqueue common scripts.
 	 */
-	wp_enqueue_script( $theme_handle_prefix . '-scripts', get_template_directory_uri() . '/assets/js/' . $theme_handle_prefix . '.min.js', array( 'jquery' ), '1.0.0', true );
+	$filename_core = "core";
+	$ver_core = filemtime( "{$js_dir_path}/{$filename_core}.min.js" );
+	wp_enqueue_script( "{$handle}-{$filename_core}", "{$js_dir_uri}/{$filename_core}.min.js", array(), $ver_core );
 }
 add_action( 'wp_enqueue_scripts', 'gulp_wp_theme_scripts' );

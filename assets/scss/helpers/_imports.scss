@@ -1,0 +1,12 @@
+// --------------------------------------------------
+// These imports can be used for individual WP block SCSS files.
+// Make your `block-name.scss` file in the same directory as `core.scss`,
+// @import this file at the top of your block SCSS file to make use of any vars and mixins.
+// Gulp will turn the block SCSS file into its own CSS file in `/assets/css`.
+
+//@import '../../node_modules/bootstrap/scss/functions';
+//@import '../../node_modules/bootstrap/scss/variables';
+//@import '../../node_modules/bootstrap/scss/mixins/breakpoints';
+//@import '../../node_modules/bootstrap/scss/mixins/grid';
+@import '../partials/variables';
+@import '../partials/mixins';

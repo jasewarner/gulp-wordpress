@@ -9,23 +9,28 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const scsslint = require('gulp-scss-lint');
-
-/**
- * Here we set a prefix for our compiled and stylesheet and scripts.
- * Note that this should be the same as the `$themeHandlePrefix` in `func-script.php` and `func-style.php`.
- */
-const themePrefix = 'theme-name';
+const clean = require('gulp-clean');
 
 /**
  * Paths and files
  */
 const srcScss = 'scss/**/*.scss';
 const srcJsDir = 'js';
-const srcJsFiles = [
-    `${srcJsDir}/scripts/common.js`,
+const srcJsCoreFiles = [
+    // `./node_modules/bootstrap/dist/js/bootstrap.js`,
+    `${srcJsDir}/src/core.js`,
+];
+const srcJsComponentFiles = [
+    `${srcJsDir}/src/components/*.js`,
 ];
 const destCss = 'css';
-const destJs = 'js';
+const destJs = 'js/dist';
+const srcClean = [
+    `${destCss}/*.min.css`,
+    `!${destCss}/.gitkeep`,
+    `${destJs}/*.min.js`,
+    `!${destJs}/.gitkeep`
+]
 
 /**
  * Scss lint
@@ -33,6 +38,14 @@ const destJs = 'js';
 gulp.task('scss-lint', () => {
     return gulp.src(srcScss)
         .pipe(scsslint());
+});
+
+/**
+ * Clean directories containing minified assets
+ */
+gulp.task('clean-dirs', () => {
+    return gulp.src(srcClean, {read: false})
+        .pipe(clean())
 });
 
 /**
@@ -44,7 +57,9 @@ gulp.task('css', gulp.series('scss-lint', () => {
     return gulp.src(srcScss)
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({ cascade : false }))
-        .pipe(rename(`${themePrefix}.min.css`))
+        .pipe(rename({
+            suffix: `.min`
+        }))
         .pipe(cleancss())
         .pipe(gulp.dest(destCss));
 }));
@@ -52,14 +67,26 @@ gulp.task('css', gulp.series('scss-lint', () => {
 /**
  * Task for scripts.
  *
- * Js files are uglified and sent over to `assets/js/scripts/`.
+ * Js files are uglified and sent over to `assets/js/dist/`.
  */
-gulp.task('js', () => {
-    return gulp.src(srcJsFiles)
+gulp.task('js-core', () => {
+    return gulp.src(srcJsCoreFiles)
         .pipe(babel({
             presets : ['@babel/env']
         }))
-        .pipe(concat(`${themePrefix}.min.js`))
+        .pipe(concat(`core.min.js`))
+        .pipe(uglify())
+        .pipe(gulp.dest(destJs));
+});
+
+gulp.task('js-components', () => {
+    return gulp.src(srcJsComponentFiles)
+        .pipe(babel({
+            presets : ['@babel/env']
+        }))
+        .pipe(rename({
+            suffix: `.min`
+        }))
         .pipe(uglify())
         .pipe(gulp.dest(destJs));
 });
@@ -69,10 +96,11 @@ gulp.task('js', () => {
  */
 gulp.task('watch', () => {
     gulp.watch(srcScss, gulp.series('css'));
-    gulp.watch(srcJsFiles, gulp.series('js'));
+    gulp.watch(srcJsCoreFiles, gulp.series('js-core'));
+    gulp.watch(srcJsComponentFiles, gulp.series('js-components'));
 });
 
 /**
  * Default task
  */
-gulp.task('default', gulp.series('css', 'js') );
+gulp.task('default', gulp.series('clean-dirs', 'css', 'js-core', 'js-components') );

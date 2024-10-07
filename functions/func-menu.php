@@ -13,7 +13,7 @@
 function gulp_wp_register_menus() {
 	register_nav_menus(
 		array(
-			'primary' => __( 'Primary' ),
+			'header' => __( 'Header' ),
 		)
 	);
 }
