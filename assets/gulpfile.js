@@ -2,14 +2,17 @@
 
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const sass = require('gulp-sass')(require('node-sass'));
-const autoprefixer = require('gulp-autoprefixer');
+const sass = require('gulp-sass')(require('sass'));
 const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
-const scsslint = require('gulp-scss-lint');
 const clean = require('gulp-clean');
+
+let autoprefixer;
+const startup = async () => {
+    autoprefixer = (await import('gulp-autoprefixer')).default;
+}
 
 /**
  * Paths and files
@@ -30,14 +33,13 @@ const srcClean = [
     `!${destCss}/.gitkeep`,
     `${destJs}/*.min.js`,
     `!${destJs}/.gitkeep`
-]
+];
 
 /**
- * Scss lint
+ * Task to run before anything else
  */
-gulp.task('scss-lint', () => {
-    return gulp.src(srcScss)
-        .pipe(scsslint());
+gulp.task('startup', async () => {
+    await startup();
 });
 
 /**
@@ -53,9 +55,17 @@ gulp.task('clean-dirs', () => {
  *
  * Scss files are compiled and sent over to `assets/css/`.
  */
-gulp.task('css', gulp.series('scss-lint', () => {
+gulp.task('css', gulp.series('startup', () => {
     return gulp.src(srcScss)
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass.sync({
+            // Suppress the "slash as division" and other API warnings
+            // that cause modern Sass to hang or fail on Bootstrap 5 code
+            quietDeps: true,
+            // Help Sass to find @import for Bootstrap files
+            includePaths: ['node_modules'],
+            // Silence the @import warnings
+            silenceDeprecations: ['import', 'legacy-js-api'],
+        }).on('error', sass.logError))
         .pipe(autoprefixer({ cascade : false }))
         .pipe(rename({
             suffix: `.min`
