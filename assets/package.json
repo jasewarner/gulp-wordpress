@@ -1,6 +1,7 @@
 {
  "name": "package-name",
  "version": "1.0.0",
+ "type": "module",
  "description": "package-description",
  "main": "index.js",
  "scripts": {
@@ -9,19 +10,19 @@
  "author": "author-name",
  "license": "ISC",
  "devDependencies": {
-  "@babel/core": "^8.0.1",
-  "@babel/preset-env": "^8.0.2",
+  "@babel/core": "^7.29.7",
+  "@babel/preset-env": "^7.29.7",
   "bootstrap": "^5.3.8",
+  "del": "^8.0.1",
   "gulp": "^5.0.1",
   "gulp-autoprefixer": "^10.0.0",
   "gulp-babel": "^8.1.0",
-  "gulp-clean": "^0.4.0",
   "gulp-clean-css": "^4.0.0",
   "gulp-concat": "^2.6.1",
   "gulp-rename": "^2.1.0",
   "gulp-sass": "^6.0.1",
   "gulp-uglify": "^3.0.1",
-  "sass": "^1.99.0"
+  "sass": "^1.102.0"
  },
  "browserslist": [
   "defaults"
