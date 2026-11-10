@@ -1,31 +1,26 @@
-const core = (($) => {
+(() => {
     'use strict';
 
     /**
      * Some function
-     *
-     * @since   1.0.0
      */
     const someFunction = () => {
-        // do something
+        // Do something
     };
 
     /**
-     * Fire events on document ready and bind other events
-     *
-     * @since   1.0.0
+     * Initialise
      */
-    const ready = () => {
+    const init = () => {
         someFunction();
     };
 
     /**
-     * Only expose the ready function to the world
+     * Safe execution: handles defer, async and normal loading
      */
-    return {
-        ready: ready
+    if (document.readyState !== 'loading') {
+        init();
+    } else {
+        document.addEventListener('DOMContentLoaded', init);
     }
-
-})(jQuery);
-
-jQuery(core.ready);
+})();
